@@ -1,5 +1,7 @@
 package demo.event;
 
+import java.util.concurrent.CountDownLatch;
+
 public class LongEvent {
 
     public LongEvent() {
@@ -8,7 +10,18 @@ public class LongEvent {
 
     private long value;
 
-    public void set(long value) {
+    public CountDownLatch countDownLatch;
+
+    public CountDownLatch getCountDownLatch() {
+        return countDownLatch;
+    }
+
+    public void setCountDownLatch(CountDownLatch countDownLatch) {
+
+        this.countDownLatch = countDownLatch;
+    }
+
+    public void setValue(long value) {
         this.value = value;
     }
 
